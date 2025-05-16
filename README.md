@@ -28,7 +28,7 @@ Criar um chatbot educativo que:
 
 1. Clone este repositório ou abra diretamente no Colab:
    ```bash
-   git clone https://github.com/seu-usuario/irbot-gemini.git
+   git clone https://github.com/claudiomiromarques/irbot.git
 
    No Google Colab:
 
