@@ -1,6 +1,6 @@
 # 💰 IRBot - Assistente de Imposto de Renda com IA (Gemini)
 
-Bem-vindo ao **IRBot**, um agente de inteligência artificial construído com a API do **Google Gemini**, voltado para tirar dúvidas sobre o **Imposto de Renda Pessoa Física (IRPF)** no Brasil.  
+Bem-vindo ao **IRBot**, um agente de inteligência artificial construído com  **API do Google AI Studio, Gemini e Google Colab**, voltado para tirar dúvidas sobre o **Imposto de Renda Pessoa Física (IRPF)** no Brasil.  
 Este projeto foi desenvolvido com foco em **linguagem simples**, acessível a qualquer pessoa — mesmo leiga no assunto.
 
 ---
