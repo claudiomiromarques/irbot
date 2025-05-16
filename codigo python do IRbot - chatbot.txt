@@ -1,0 +1,66 @@
+# Instale a biblioteca necessária para usar o modelo Gemini da Google
+!pip install -q google-generativeai
+
+# Importa o módulo principal da biblioteca Gemini
+import google.generativeai as genai
+
+# Importa funções para exibir mensagens com formatação Markdown no Google Colab
+from IPython.display import display, Markdown
+
+# Importa bibliotecas do sistema operacional e do Google Colab para ler a chave da API com segurança
+import os
+from google.colab import userdata 
+
+# Define a variável de ambiente com a chave da API, buscando do armazenamento seguro do Colab (userdata)
+os.environ['GOOGLE_API_KEY'] = userdata.get('GOOGLE_API_KEY')
+
+# Configura o modelo generativo da Google com a chave de API informada
+genai.configure(api_key=os.environ['GOOGLE_API_KEY'])
+
+# Inicializa o modelo Gemini usando a versão "gemini-2.0-flash"
+model = genai.GenerativeModel(model_name="gemini-2.0-flash")
+
+# Define a função que recebe uma pergunta e um histórico de conversa 
+
+def chat_ir_bot(pergunta, history=[]):
+    
+    # Cria uma nova conversa com base no histórico anterior (se houver)
+    chat = model.start_chat(history=history)
+    
+    # Cria o prompt com instruções para a IA se comportar como um assistente educacional sobre IR
+    prompt = f"""
+    Você é um assistente virtual que ajuda pessoas a entender o Imposto de Renda Pessoa Física (IRPF) no Brasil.  
+    Explique de forma simples e direta, como se estivesse conversando com alguém que não entende nada do assunto.  
+    Evite termos técnicos sempre que possível e não dê conselhos ilegais.  
+    Seja claro, confiável e educativo em todas as respostas.
+    Pergunta: {pergunta}
+    """
+    
+    # Envia o prompt ao modelo Gemini e recebe a resposta
+    resposta = chat.send_message(prompt)
+
+    # Retorna o texto da resposta e o histórico da conversa atualizado
+    return resposta.text, chat.history
+
+# Inicializa o histórico de conversa como uma lista vazia
+history = []
+
+# Mensagem de boas-vindas
+print("💰 IRBot: Olá! Sou seu assistente para dúvidas sobre o Imposto de Renda. Como posso ajudar?\n")
+
+# Inicia um loop infinito para manter o chat funcionando até o usuário digitar "sair"
+
+while True:
+    # Lê a pergunta do usuário
+    pergunta = input("Você: ")
+
+    # Se o usuário digitar sair, exit ou fim (em qualquer capitalização), o chatbot encerra
+    if pergunta.lower() in ["sair", "exit", "fim"]:
+        print("💰 IRBot: Até mais! Lembre-se de declarar dentro do prazo 😉")
+        break
+
+    # Chama a função do chatbot, passando a pergunta e o histórico da conversa
+    resposta, history = chat_ir_bot(pergunta, history)
+
+    # Exibe a resposta formatada em Markdown (negrito com emoji)
+    display(Markdown(f"**💰 IRBot:** {resposta}"))
