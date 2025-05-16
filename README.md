@@ -80,5 +80,6 @@ Sinta-se livre para abrir issues, sugerir melhorias ou enviar pull requests.
 
 🙋 Autor
 Desenvolvido por Claudiomiro Marques.
+
 Projeto experimental com fins educacionais.
 
