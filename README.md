@@ -1,7 +1,7 @@
 # 💰 IRBot Chatbot - Assistente de Imposto de Renda com IA (Gemini)
 
 Bem-vindo ao **IRBot**, um agente de inteligência artificial construído com  **API do Google AI Studio, Gemini e Google Colab**, voltado para tirar dúvidas sobre o **Imposto de Renda Pessoa Física (IRPF)** no Brasil.  
-Este projeto foi desenvolvido com foco em **linguagem simples**, acessível a qualquer pessoa — mesmo leiga no assunto.
+Este projeto foi desenvolvido com foco em **linguagem simples**, acessível a qualquer pessoa, mesmo leiga no assunto.
 
 ---
 
@@ -17,7 +17,7 @@ Criar um chatbot educativo que:
 
 ## 🧠 Tecnologias Utilizadas
 
-- [Google Gemini AI](https://makersuite.google.com/app)
+- [Google Gemini AI](https://gemini.google.com/app)
 - [Google Colab](https://colab.research.google.com/)
 - Python 3
 - Markdown para exibição das respostas
@@ -48,7 +48,7 @@ Configure sua chave da API Gemini via userdata.get('GOOGLE_API_KEY'), caso não 
 
 O IRBot é instruído com o seguinte prompt base:
 
-"Você é um assistente virtual que ajuda pessoas a entender o Imposto de Renda Pessoa Física (IRPF) no Brasil.
+"Você é um assistente virtual especialista em  tributação, que ajuda pessoas a entender o Imposto de Renda Pessoa Física (IRPF) no Brasil.
 Explique de forma simples e direta, como se estivesse conversando com alguém que não entende nada do assunto.
 Evite termos técnicos sempre que possível e não dê conselhos ilegais.
 Seja claro, confiável e educativo em todas as respostas."
@@ -76,10 +76,9 @@ Você: Ganhei menos de R$30.000 no ano. Preciso declarar?
 
 🤝 Contribuições
 Contribuições são bem-vindas!
-Sinta-se livre para abrir issues, sugerir melhorias ou enviar pull requests.
+Sinta-se livre para contribuir para melhorias...
 
 🙋 Autor
 Desenvolvido por Claudiomiro Marques.
-
 Projeto experimental com fins educacionais.
 
